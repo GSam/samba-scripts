@@ -31,4 +31,9 @@ END {
     if (have_attributions && !has_mine) {
         printf "Reviewed-by: %s\n", tag
     }
+
+    if (!have_attributions) {
+	system("echo > /dev/stderr")
+	system("echo The above patch was missing a signed-off! > /dev/stderr")
+    }
 }
