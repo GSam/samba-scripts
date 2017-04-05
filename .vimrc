@@ -51,3 +51,16 @@ vnoremap <c-k> $d
 
 "map <PageUp> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 "map <PageDown> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+
+set errorformat^=%-G%f:%l:\ warning:%m
+
+nnoremap <F5> :w<cr> :make -j<cr>
+
+autocmd QuickFixCmdPost [^l]* nested vertical botright copen 100
+autocmd QuickFixCmdPost    l* nested vertical botright lwindow 100
+
+au BufReadPost quickfix setlocal foldmethod=marker
+au BufReadPost quickfix setlocal foldmarker=Entering\ directory,Leaving\ directory
+au BufReadPost quickfix normal zq
+
+set cscopequickfix=s-,c-,d-,i-,t-,e-
