@@ -50,6 +50,14 @@ inoremap <Enter> <c-g>u<Enter>
 cabbrev <silent> w!! w !sudo tee > /dev/null %
 cabbrev <silent> ui :norm `iv`]d
 
+func Eatchar(pat)
+        let c = nr2char(getchar(0))       
+        return (c =~ a:pat) ? '' : c      
+endfunc
+cabbrev ** **/*<C-R>=Eatchar('\s')<CR>
+
+cnoremap <expr> : getcmdpos() == 1 ? '!' : ':'
+
 inoremap <c-k> <Esc>lC
 nnoremap <c-k> vg_d
 vnoremap <c-k> $d
