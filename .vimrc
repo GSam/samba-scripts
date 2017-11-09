@@ -2,6 +2,10 @@ set showcmd
 "set hidden
 "set tw=80
 
+set wildmenu
+set wildmode=list,full
+set wildignore+=bin/*,*.swp,*.pyc,*~,*#
+
 filetype plugin indent on
 
 set foldlevelstart=99
