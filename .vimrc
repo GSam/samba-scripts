@@ -41,6 +41,7 @@ map <silent><F4> :if mapcheck("p", "n") != ""<Bar>
 
 nnoremap <C-C> <silent> <C-C>
 set completeopt=longest,menuone
+inoremap <expr> <TAB> pumvisible() ? '<C-y>' : '<TAB>'
 
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
