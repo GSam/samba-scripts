@@ -31,10 +31,12 @@ map <F3> :if &mouse == "" <Bar>
     	  \endif<cr>
 map <silent><F4> :if mapcheck("p", "n") != ""<Bar>
               \unmap p<Bar>
+              \unmap P<Bar>
               \unmap y<Bar>
 	      \echo "~~~~END WINDOWS MODE~~~~"<Bar>
           \else<Bar>
               \noremap p "+p<Bar>
+              \noremap P "+P<Bar>
               \noremap y "+y<Bar>
               \echo "~~~~BEGIN WINDOWS MODE~~~~"<Bar>
           \endif<cr>
