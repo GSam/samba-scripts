@@ -49,6 +49,7 @@ inoremap <Enter> <c-g>u<Enter>
 
 cabbrev <silent> w!! w !sudo tee > /dev/null %
 cabbrev <silent> ui :norm `iv`]d
+cabbrev <silent> qw wq
 
 func Eatchar(pat)
         let c = nr2char(getchar(0))       
