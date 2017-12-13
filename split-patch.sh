@@ -10,6 +10,8 @@ trap cleanup EXIT
 STORE=$(git diff HEAD~ --name-only)
 git diff HEAD~ --name-only | cat
 
+DATE=$(git log HEAD~..HEAD --pretty=format:%aD)
+
 git diff HEAD~..HEAD | csplit  --prefix=$WORK_DIR/patch - "/diff --git/" "{*}" -z
 git reset HEAD~ --hard
 
@@ -21,6 +23,6 @@ for f in $WORK_DIR/patch*; do
 done
 
 for f in $STORE; do
-    git add $f
-    git commit -m "$f" $f
+    git add --all $f
+    git commit -m "$f" $f --date "$DATE"
 done
