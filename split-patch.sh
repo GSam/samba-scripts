@@ -12,7 +12,7 @@ git diff HEAD~ --name-only | cat
 
 DATE=$(git log HEAD~..HEAD --pretty=format:%aD)
 
-git diff HEAD~..HEAD | csplit  --prefix=$WORK_DIR/patch - "/diff --git/" "{*}" -z
+git diff HEAD~..HEAD | csplit --prefix=$WORK_DIR/patch - "/diff --git/" "{*}" -z
 git reset HEAD~ --hard
 
 for f in $WORK_DIR/patch*; do
