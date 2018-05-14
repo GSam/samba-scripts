@@ -1,0 +1,6 @@
+[alias]
+	ls = "!git ls-files | grep -i --color=always"
+	rbi = "!git rebase -i"
+	rbc = "!git rebase --continue"
+	history = "!git for-each-ref --sort=-committerdate refs/heads/"
+	push-head = "!bash -c 'git push $1 HEAD:refs/heads/$2 -f' -"
