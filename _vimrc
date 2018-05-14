@@ -21,3 +21,4 @@ filetype plugin indent on
 syntax on
 
 set cinoptions=:0,p0,t0,(1s,(0
+set backspace=2
